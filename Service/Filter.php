@@ -44,10 +44,6 @@ class Filter
             $property->setAccessible(true);
             $value = $property->getValue($object);
 
-            if (empty($value)) {
-                continue;
-            }
-
             $filter = new FilterChain();
             foreach ($attributes as $attribute) {
                 $filter->attachByName($attribute->getFilter(), $attribute->getOptions());
